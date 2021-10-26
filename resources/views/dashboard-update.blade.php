@@ -70,6 +70,16 @@
             float: right;
             margin-right: 20px;
         }
+        .account-dropdown {
+            box-sizing: border-box;
+            float: right;
+            padding-top: 20px;
+            padding-right: 20px;
+            align-items: center;
+        }
+        .account-dropdown a {
+            color: #492726;
+        }
 
         /* Job Container */
 
@@ -133,74 +143,99 @@
             text-shadow: 1px 0 black;
             letter-spacing:1px;
         }
+
+        .hex {
+            position: absolute;
+        max-width: 100%;
+        width: 55.03px;
+        /* height: 55.03px; */
+        left: 1280.97px;
+        top: 9px;
+        }
+        .hex:before {
+        content: '';
+        display: block;
+        padding-bottom: 115%;
+        }
+        .hex img {
+        left: 50%;
+        position: relative;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 115%;
+        }
+        .hex__shape {
+        position: absolute;
+        backface-visibility: hidden;
+        left: 0;
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+        transform: rotate(240deg);
+        width: 100%;
+        }
+
+        #email {
+            margin-right: 80px;
+        }
     </style>
     <title>Hive: Dashboard</title>
 </head>
 <body>
     <div class="side-nav">
-        <a href="/admin/home"><img id="logo" src="/images/Logoo-01.png" alt="Logo"></a>
-        <ul class="nav">
-            <li>
-                <a href="/admin/home">
-                    <button class="btn">
-                        <i class="icon"><img src="/images/Home-01.png" alt="Home"></i>
-                        <span>Home</span>
-                    </button>
+        <a href="/home"><img id="logo" src="/images/Logoo-01.png" alt="Logo"></a>
+        
+        <table class="nav">
+            <tr>
+            <a href="/home">
+                <td>
+                    <a href="/home">
+                            <i class="icon"><img src="/images/Home-01.png" alt="Home"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="/home">
+                            <span>Home</span>
+                    </a>
+                </td>
                 </a>
-            </li>
-            <li>
-                <a href="/admin/dashboard">
+            </tr>
+            <tr>
+                <a href="/dashboard">
                     <button class="btn active">
-                        <i id="dashboard" class="icon"><img src="/images/dashboard2-01.png" alt="Home"></i>
-                        <span>Dashboard</span>
+                        <td><i id="dashboard" class="icon"><img src="/images/dashboard2-01.png" alt="Home"></i></td>
+                        <td><span>Dashboard</span></td>
                     </button>
                 </a>
-            </li>
-            <li>
-                <a href="/admin/applicants/jobs">
+            </tr>
+            <tr>    
+                <a href="#">
                     <button class="btn">
-                        <i class="icon"><img src="/images/Applicant-01.png" alt="Home"></i>
-                        <span>Applicants</span>
+                        <td><i id="coe" class="icon"><img src="/images/COE-01.png" alt="Home"></i></td>
+                        <td><span>COE</span></td>
                     </button>
                 </a>
-            </li>
-            <li>
-                <a href="/admin/employees">
+            <tr>    
+                <a href="/file-of-leave/request-form">
                     <button class="btn">
-                        <i class="icon"><img src="/images/Employee-01.png" alt="Employees"></i>
-                        <span>Employees</span>
+                        <td><i class="icon"><img src="/images/Leave-01.png" alt="Home"></i></td>
+                        <td><span>File of Leave</span></td>
                     </button>
                 </a>
-            </li>
-            <li>
-                <a href="/admin/file-of-leave">
-                    <button class="btn">
-                        <i class="icon"><img src="/images/Leave-01.png" alt="Home"></i>
-                        <span>File of Leave</span>
-                    </button>
-                </a>
-            </li>
-            <li>
-                <a href="/admin/coe-requests">
-                    <button class="btn">
-                        <i id="coe" class="icon"><img src="/images/COE-01.png" alt="Home"></i>
-                        <span>COE Requests</span>
-                    </button>
-                </a>
-            </li>
+        </table>
             <br><br>
             <hr>
             <br><br>
             <li>
-                <a href="/dashboard">
+                <a href="/login-as-admin">
                     <button class="btn">
-                        <i id="dashboard" class="icon"><img src="/images/dashboard2-01.png" alt="Hive"></i>
-                        <span>Employees' View</span>
+                        <i id="login" class="icon"><img src="/images/admin-login.png" alt="Home"></i>
+                        <span>Login as admin</span>
                     </button>
                 </a>
             </li>
             <li>
-                <a href="/logout-admin">
+                <a href="/logout">
                     <button class="btn">
                         <i id="logout" class="icon"><img src="/images/admin-logout.png" alt="Home"></i>
                         <span>Logout</span>
@@ -211,7 +246,7 @@
     </div>
 
     <div class="main">
-        <h1>Dashboard (admin)</h1>
+        <h1>Dashboard</h1>
         <div class="account-dropdown">
             <a href="#">
               <i class="icon"><img src="/images/notif-icon.png"></i>
@@ -227,7 +262,6 @@
               </div>
             </a>
         </div>
-        <hr>
     </div>
 </body>
 </html>

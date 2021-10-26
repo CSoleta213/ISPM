@@ -1,26 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/images/favicon-01-01.png">
+<html>
+  <head>
+    <title>Hive</title>
+    <link rel="icon" href="/images/favicon-01-01.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/side-nav.css">
     <link rel="stylesheet" href="/css/main-content.css">
     <style>
-        * {
+    * {
             margin: 0;
             padding: 0;
             text-decoration: none;
         }
-        body {
-            box-sizing: border-box;
+      body {
+        background-image: url('/images/Homepagee.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .side-nav {
+        background: #FFF5E1;
+    }
+
+        .side-nav .active, .btn:hover {
+            background-color: #FFCE65;
+            color: white;
+        }
+
+        .btn {
             background-color: #FFF5E1;
-            font-family: 'Montserrat', sans-serif;
+            color:black;    
+            text-shadow: 1px 0 black;
         }
 
         /* Main Body */
@@ -134,15 +149,14 @@
             letter-spacing:1px;
         }
     </style>
-    <title>Hive: Dashboard</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="side-nav">
         <a href="/admin/home"><img id="logo" src="/images/Logoo-01.png" alt="Logo"></a>
         <ul class="nav">
             <li>
                 <a href="/admin/home">
-                    <button class="btn">
+                    <button class="btn active">
                         <i class="icon"><img src="/images/Home-01.png" alt="Home"></i>
                         <span>Home</span>
                     </button>
@@ -150,7 +164,7 @@
             </li>
             <li>
                 <a href="/admin/dashboard">
-                    <button class="btn active">
+                    <button class="btn">
                         <i id="dashboard" class="icon"><img src="/images/dashboard2-01.png" alt="Home"></i>
                         <span>Dashboard</span>
                     </button>
@@ -211,7 +225,7 @@
     </div>
 
     <div class="main">
-        <h1>Dashboard (admin)</h1>
+        <h1>Home (admin)</h1>
         <div class="account-dropdown">
             <a href="#">
               <i class="icon"><img src="/images/notif-icon.png"></i>
@@ -227,7 +241,6 @@
               </div>
             </a>
         </div>
-        <hr>
     </div>
-</body>
+  </body>
 </html>

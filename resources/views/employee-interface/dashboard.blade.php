@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/side-nav.css">
+    <link rel="stylesheet" href="/css/main-content.css">
     <style>
         * {
             margin: 0;
@@ -20,54 +22,12 @@
             background-color: #FFF5E1;
             font-family: 'Montserrat', sans-serif;
         }
-        /* Side Navigation */
-        .btn {
-            border: none;
-            outline: none;
-            background-color: white;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            font-size: medium;
-            font-weight: bold;
-            color:black;    
-            text-shadow: 1px 0 black;
-            letter-spacing:1px;
-        }
-        .active, .btn:hover {
-            background-color: #FFCE65;
-            color: white;
-            width: 200px;
-            text-align: left;
-        }
-        .sidenav {
-            position: fixed;
-            background: white;
-            width: 200px;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
 
-        /* Logoo-01 1 */
-        #logo {
-          /* position: absolute; */
-          width: 142.97px;
-          height: 100px;
-          margin-left: 25px;
-          margin-top: 10px;
-          margin-bottom: 0px;
-        }
-  
-        .icon img {
+        /* Main Body */
+        .main .icon img {
             width: 50px;    
             vertical-align: middle;
             padding-left: 10px;
-        }
-
-        /* Main Body */
-        .main {
-            margin-left: 200px;
         }
 
         .main h1{
@@ -109,16 +69,6 @@
         ul.ajp-right {
             float: right;
             margin-right: 20px;
-        }
-        .account-dropdown {
-            box-sizing: border-box;
-            float: right;
-            padding-top: 20px;
-            padding-right: 20px;
-            align-items: center;
-        }
-        .account-dropdown a {
-            color: #492726;
         }
 
         /* Job Container */
@@ -183,56 +133,15 @@
             text-shadow: 1px 0 black;
             letter-spacing:1px;
         }
-
-        .hex {
-            position: absolute;
-  max-width: 100%;
-  width: 55.03px;
-  /* height: 55.03px; */
-left: 1280.97px;
-top: 9px;
-}
-.hex:before {
-  content: '';
-  display: block;
-  padding-bottom: 115%;
-}
-.hex img {
-  left: 50%;
-  position: relative;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  width: 115%;
-}
-.hex__shape {
-  position: absolute;
-  backface-visibility: hidden;
-  left: 0;
-  height: 100%;
-  overflow: hidden;
-  top: 0;
-  transform: rotate(240deg);
-  width: 100%;
-}
-
-#email {
-    margin-right: 80px;
-}
-
-#logout img {
-    width: 35px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
     </style>
     <title>Hive: Dashboard</title>
 </head>
 <body>
-    <div class="sidenav">
-        <a href="/"><img id="logo" src="/images/Logoo-01.png" alt="Logo"></a>
+    <div class="side-nav">
+        <a href="/home"><img id="logo" src="/images/Logoo-01.png" alt="Logo"></a>
         <ul class="nav">
             <li>
-                <a href="/">
+                <a href="/home">
                     <button class="btn">
                         <i class="icon"><img src="/images/Home-01.png" alt="Home"></i>
                         <span>Home</span>
@@ -242,32 +151,24 @@ top: 9px;
             <li>
                 <a href="/dashboard">
                     <button class="btn active">
-                        <i id="logout" class="icon"><img src="/images/dashboard.png" alt="Home"></i>
+                        <i id="dashboard" class="icon"><img src="/images/dashboard2-01.png" alt="Home"></i>
                         <span>Dashboard</span>
                     </button>
                 </a>
             </li>
             <li>
-                <a href="/login-as-admin">
-                    <button class="btn">
-                        <i class="icon"><img src="/images/Applicant-01.png" alt="Home"></i>
-                        <span>Applicants</span>
-                    </button>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <button class="btn">
-                        <i class="icon"><img src="/images/COE-01.png" alt="Home"></i>
-                        <span>COE</span>
-                    </button>
-                </a>
-            </li>
-            <li>
-                <a href="/file-of-leave/request-form">
+                <a href="/file-leave-of-absence/request-form">
                     <button class="btn">
                         <i class="icon"><img src="/images/Leave-01.png" alt="Home"></i>
-                        <span>File of Leave</span>
+                        <span>File Leave of Absence</span>
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="/request-a-coe">
+                    <button class="btn">
+                        <i id="coe" class="icon"><img src="/images/COE-01.png" alt="Home"></i>
+                        <span>Request a COE</span>
                     </button>
                 </a>
             </li>
@@ -277,15 +178,15 @@ top: 9px;
             <li>
                 <a href="/login-as-admin">
                     <button class="btn">
-                        <i id="logout" class="icon"><img src="/images/login.png" alt="Home"></i>
-                        <span>Login(admin)</span>
+                        <i id="login" class="icon"><img src="/images/admin-login.png" alt="Home"></i>
+                        <span>Login as admin</span>
                     </button>
                 </a>
             </li>
             <li>
                 <a href="/logout">
                     <button class="btn">
-                        <i id="logout" class="icon"><img src="/images/logout.png" alt="Home"></i>
+                        <i id="logout" class="icon"><img src="/images/admin-logout.png" alt="Home"></i>
                         <span>Logout</span>
                     </button>
                 </a>
@@ -310,6 +211,7 @@ top: 9px;
               </div>
             </a>
         </div>
+        <hr>
     </div>
 </body>
 </html>

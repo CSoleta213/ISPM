@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class FOLsController extends Controller
 {
-    function saveData(Request $req)
+    public function saveData(Request $req)
     {
       $fol = new FOL;
       $fol->code_name=$req->code_name;
@@ -23,7 +23,8 @@ class FOLsController extends Controller
       $fol->reason=$req->reason;
       $fol->certified=$req->certified;
       $fol->save();
-      echo 'Your request has been sent!';
+      
+      return redirect('/file-a-leave/my-request')->with('confirmation', 'Your request has been sent! Please check it at the last number.');
     }
 
     public function showData() {

@@ -215,7 +215,7 @@
     </h1>
     <img id="caption" src="/images/humble-01.png" alt="Caption">
     <!-- <img id="pulot" src="/images/Pulot-01.png" alt=""> -->
-    <form action="/loginme" method="post">
+    <form action="/loginme-admin" method="post">
       @csrf
       <div class="cropped">
         <img id="hive" src="/images/Hive-01_Cutted.png" alt="Hive">
@@ -226,7 +226,7 @@
         <div class="line3"></div>
         <div class="line4"></div>
       </div>
-      <h2>LOGIN</h2>
+      <h2>LOGIN as ADMIN</h2>
       <p>Welcome back to Company!</p><br>
       <img id="bee" src="/images/bee-01.png" alt="Bee">
       <div>
@@ -237,7 +237,7 @@
         <input type="submit" value="Sign in" style="font-family: Dela Gothic One; font-size: 25px; color: #FFFFFF; background-color: #FFB30F; border: none; cursor: pointer;">
       </div>
       <br>
-      Do you want to sign in as admin? Click <a href="/login-admin">here</a>.  
+      Do you want to sign in as an employee? Click <a href="/login">here</a>.
       <br><br>
       <p class="warning">{{ session('warning') }}</p>
     </form>

@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FOLsController;
 use App\Http\Controllers\ApplicantsController;
-use App\Http\Controllers\AdminsController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EmployeesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,24 +18,45 @@ use App\Http\Controllers\AdminsController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/login/forgot', [ForgotPasswordController::class, 'forgot']);
-Route::post('/login/forgot', [ForgotPasswordController::class, 'password']);
-
-Route::post('loginme',[LoginController::class,'login']);
+// EMPLOYEE'S VIEWS
+Route::view('/', 'index');
+Route::view('/home', 'employee-interface.home');
 Route::view('/dashboard', 'employee-interface.dashboard');
+Route::view('/request-a-coe', 'employee-interface.request-a-coe');
+Route::view('/file-leave-of-absence/request-form', 'employee-interface.file-leave-of-absence');
+Route::view('/login-as-admin', 'login-as-admin');
 
-Route::get('/login', function () {
-    if(session()->has('email'))
+// EMPLOYEE'S GET METHODS
+Route::get('/file-leave-of-absence/my-request', [FOLsController::class,'showData']);
+
+// ADMIN'S VIEWS
+Route::view('/admin/home', 'admin-interface.home');
+Route::view('/admin/dashboard', 'admin-interface.dashboard');
+Route::view('/admin/applicants/jobs', 'admin-interface.applicants');
+Route::view('/admin/applicants/candidates', 'admin-interface.candidates');
+Route::view('/admin/employees', 'admin-interface.employees');
+Route::view('/admin/file-of-leave', 'admin-interface.file-of-leave');
+Route::view('/admin/coe-requests', 'admin-interface.coe-requests');
+
+// ADMIN'S GET METHODS
+Route::get('/admin/file-of-leave', [FOLsController::class,'showDataToAdmin']);
+
+// OTHER VIEWS
+Route::view('/application-form', 'admin-interface.application-form');
+Route::view('/admin', 'admin');
+Route::view('/register-an-employee', 'register-an-employee');
+Route::view('login-admin', 'login-admin');
+
+// OTHER GET METHODS
+Route::get('/login', function ()
+{
+  if(session()->has('email'))
     {
-        return redirect('/dashboard');
+      return redirect('/dashboard');
     }
-    return view('login');
+      return view('login');
 });
-
+Route::get('/login/forgot', [ForgotPasswordController::class, 'forgot']);
 Route::get('/logout', function () {
     if(session()->has('email'))
     {
@@ -42,37 +64,20 @@ Route::get('/logout', function () {
     }
     return redirect('login');
 });
+Route::get('/logout-admin', function () {
+    if(session()->has('email'))
+    {
+        session()->pull('email');
+    }
+    return redirect('/login-admin');
+});
 
-// Route::post("fols",[FOLsController::class,'getData']);
-Route::view('/file-of-leave/request-form', 'employee-interface.file-of-leave');
-
-// Route::view('/file-of-leave/my-request', 'employee-interface.my-request');
-
+// OTHER POST METHODS
+Route::post('loginme',[LoginController::class,'login']); // POST AN EMAIL
+Route::post('/login/forgot', [ForgotPasswordController::class, 'password']);
 Route::post('/requested', [FOLsController::class,'saveData']);
-
-Route::view('/applicant', 'admin-interface.applicant');
-
-
-// Route::get('/file-of-leave/my-request', [FOLsController::class,'showData']);
-
-// Route::get('/file-of-leave/my-request', function () {
-//     return view('my-request', ['fullname' => 'Samantha']);
-// });
-
-Route::get('/file-of-leave/my-request', [FOLsController::class,'showData']);
-
-Route::view('/application-form', 'admin-interface.application-form');
 Route::post('/recorded', [ApplicantsController::class, 'saveApplicant']);
-
-Route::view('/admin', 'admin');
-Route::post('/added-as-admin', [AdminsController::class, 'addAsAdmin']);
-
-Route::view('/login-as-admin', 'login-as-admin');
-
+Route::post('/added-as-admin', [AdminController::class, 'addAsAdmin']);
 Route::post('/loginme-as-admin',[LoginController::class,'loginAsAdmin']);
-Route::view('/admin/dashboard', 'admin-interface.dashboard');
-
-Route::view('/admin/file-of-leave', 'admin-interface.file-of-leave');
-Route::get('/admin/file-of-leave', [FOLsController::class,'showDataToAdmin']);
-
-Route::view('/home', 'home');
+Route::post('registered-as-employee', [EmployeesController::class, 'registerAnEmployee']);
+Route::post('/loginme-admin',[LoginController::class,'loginAdmin']);

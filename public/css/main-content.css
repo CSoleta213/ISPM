@@ -1,0 +1,69 @@
+.main {
+  margin-left: 250px;
+}
+
+/* PROFILE PICTURE and ITS COMPANY DESIGN */
+.account-dropdown {
+  box-sizing: border-box;
+  float: right;
+  padding-top: 20px;
+  padding-right: 20px;
+  align-items: center;
+}
+.account-dropdown a {
+  color: #492726;
+}
+
+/* PROFILE PICTURE DESIGN */
+.hex {
+  position: absolute;
+  max-width: 100%;
+  width: 55.03px;
+  left: 1280.97px;
+  top: 9px;
+}
+.hex:before {
+content: '';
+display: block;
+padding-bottom: 115%;
+}
+.hex img {
+left: 50%;
+position: relative;
+top: 50%;
+transform: translate(-50%,-50%);
+width: 115%;
+}
+.hex__shape {
+position: absolute;
+backface-visibility: hidden;
+left: 0;
+height: 100%;
+overflow: hidden;
+top: 0;
+transform: rotate(240deg);
+width: 100%;
+}
+
+#email {
+  margin-right: 80px;
+}
+
+.main hr {
+  border-top: 1px solid #FFB30F;
+  border-bottom: 1px solid #FFB30F;
+  width: 98%;
+  margin-left: 20px;
+}
+
+
+/* MESSAGES COLOR CODING */
+.confirmation {
+  color: #00FF00;
+}
+
+.warning {
+  color: #FF0000;
+  font-size: small;
+  font-weight: bold;
+}

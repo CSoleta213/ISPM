@@ -1,0 +1,73 @@
+/* Logoo-01 1 */
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 142.97px;
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+/* Side Navigation */
+.side-nav {
+    position: fixed;
+    background: white;
+    width: 250px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.side-nav hr {
+  border-top: 1px solid #FFB30F;
+  border-bottom: 1px solid #FFB30F;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: small;
+  font-weight: bold;
+  color:black;    
+  text-shadow: 1px 0 black;
+  letter-spacing:1px;
+}
+
+table {
+    width: 100%;
+}
+
+.active, tr:hover {
+    background-color: #FFEBC0;
+    color: #FFB81E;
+    width: 100%;
+    text-align: left;
+    text-shadow: 1px 0 #FFCE65;
+}
+
+.side-nav .icon img {
+    width: 40px;    
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+#dashboard img, #coe img {
+    width: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+#login img, #logout img {
+    width: 45px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 10px;
+}

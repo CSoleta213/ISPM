@@ -134,7 +134,7 @@
             letter-spacing:1px;
         }
     </style>
-    <title>Hive: Dashboard</title>
+    <title>Hive: Employees</title>
 </head>
 <body>
     <div class="side-nav">
@@ -150,7 +150,7 @@
             </li>
             <li>
                 <a href="/admin/dashboard">
-                    <button class="btn active">
+                    <button class="btn">
                         <i id="dashboard" class="icon"><img src="/images/dashboard2-01.png" alt="Home"></i>
                         <span>Dashboard</span>
                     </button>
@@ -166,7 +166,7 @@
             </li>
             <li>
                 <a href="/admin/employees">
-                    <button class="btn">
+                    <button class="btn active">
                         <i class="icon"><img src="/images/Employee-01.png" alt="Employees"></i>
                         <span>Employees</span>
                     </button>
@@ -211,7 +211,7 @@
     </div>
 
     <div class="main">
-        <h1>Dashboard (admin)</h1>
+        <h1>Employees</h1>
         <div class="account-dropdown">
             <a href="#">
               <i class="icon"><img src="/images/notif-icon.png"></i>
